@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+br/com/bytebank2/bytebank2/BuildConfig.java
+ br.com.bytebank2.bytebank2.BuildConfig
