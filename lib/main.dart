@@ -1,4 +1,4 @@
-import 'package:bytebank2/screens/dashboard.dart';
+import 'package:bytebank3/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
