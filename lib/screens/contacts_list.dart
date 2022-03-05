@@ -1,3 +1,5 @@
+import 'package:bytebank3/components/centered_message.dart';
+import 'package:bytebank3/components/progresse.dart';
 import 'package:bytebank3/database/dao/contact_dao.dart';
 import 'package:bytebank3/models/contact.dart';
 import 'package:bytebank3/screens/contact_form.dart';
@@ -25,31 +27,28 @@ class _ContactsListState extends State<ContactsList> {
             case ConnectionState.none:
               break;
             case ConnectionState.waiting:
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    CircularProgressIndicator(),
-                    Text('Loading'),
-                  ],
-                ),
-              );
+              return  Progresse();
               break;
             case ConnectionState.active:
               break;
             case ConnectionState.done:
               final List<Contact> contacts = snapshot.data;
-              return ListView.builder(
-                itemBuilder: (context, index) {
-                  final Contact contact = contacts[index];
-                  return _ContactItem(contact);
-                },
-                itemCount: contacts.length,
+              if(contacts.isNotEmpty) {
+                return ListView.builder(
+                  itemBuilder: (context, index) {
+                    final Contact contact = contacts[index];
+                    return _ContactItem(contact);
+                  },
+                  itemCount: contacts.length,
+                );
+              }
+              return CenteredMessage(
+                'Nenhuma contato foi encontrado!',
+                icon: Icons.warning,
               );
               break;
           }
-          return Text('Unkown error');
+          return CenteredMessage('Erro Desconhecido');
         },
       ),
       floatingActionButton: FloatingActionButton(

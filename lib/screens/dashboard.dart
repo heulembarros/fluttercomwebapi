@@ -35,6 +35,16 @@ class Dashboard extends StatelessWidget {
                     _showTransactionList(context);
                   },
                 ),
+                _FeatureItem(
+                  'Teste',
+                  Icons.person,
+                  onClick: () {},
+                ),
+                _FeatureItem(
+                  'Teste 2',
+                  Icons.print,
+                  onClick: () {},
+                ),
               ],
             ),
           ),

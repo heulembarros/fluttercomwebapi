@@ -1,8 +1,10 @@
+import 'package:bytebank3/http/webclient.dart';
 import 'package:bytebank3/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(ByteBankApp());
+  findAll().then((transactions) => print('new transactions $transactions'));
 }
 class ByteBankApp extends StatelessWidget {
   @override
