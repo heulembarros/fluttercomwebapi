@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class CenteredMessage extends StatelessWidget {
   final String message;
   final IconData icon;
