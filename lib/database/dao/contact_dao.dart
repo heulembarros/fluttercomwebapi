@@ -14,7 +14,7 @@ class ContactDao {
   static const String _accountNumber = 'account_number';
 
   Future<int> save(Contact contact) async {
-    final Database db = await geteDatabase();
+    final Database db = await gateDatabase();
     Map<String, dynamic> contactMap = _toMap(contact);
     return db.insert(_tableName, contactMap);
   }
@@ -27,7 +27,7 @@ class ContactDao {
   }
 
   Future<List<Contact>> findAll() async {
-    final Database db = await geteDatabase();
+    final Database db = await gateDatabase();
     final List<Map<String, dynamic>> result = await db.query(_tableName);
     List<Contact> contacts = _toList(result);
     return contacts;
